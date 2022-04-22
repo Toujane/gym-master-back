@@ -7,5 +7,4 @@ node_modules
 !.vscode/extensions.json
 !.vscode/*.code-snippets
 
-development.env
-production.env
+*.env
