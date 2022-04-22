@@ -19,7 +19,6 @@ const connectDB = require('./db/connect');
 
 // routers
 const authRouter = require('./routes/authRoutes');
-const bcryptjs = require('bcryptjs');
 
 // middleware
 
