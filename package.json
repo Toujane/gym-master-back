@@ -2,7 +2,7 @@
   "name": "gym-master-back",
   "version": "1.0.0",
   "description": "Express server for gym master application",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon app.js",
     "prod": "cross-env NODE_ENV=production node app.js",
