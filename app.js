@@ -28,7 +28,7 @@ app.use(xss());
 app.use(mongoSanitize());
 
 app.use(express.json());
-app.use(cookieParser(config.JWT_SECRET_KEY));
+//app.use(cookieParser(config.JWT_SECRET_KEY));
 
 //routes
 app.use('/api/v1/auth', router.authRouter);
