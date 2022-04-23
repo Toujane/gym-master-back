@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const validator = require('validator');
+const { isEmail } = require('validator');
 const bcrypt = require('bcryptjs');
 
 const UserSchema = new mongoose.Schema({
@@ -19,13 +19,13 @@ const UserSchema = new mongoose.Schema({
 		type: String,
 		unique: true,
 		required: [true, 'Please provide email'],
+		validate: [isEmail, 'Please provide valid email'],
 	},
 	password: {
 		type: String,
 		unique: true,
 		required: [true, 'Please provide email'],
-		minlength: 8,
-		maxlength: 71,
+		maxlength: 65,
 	},
 	phone: {
 		type: String,
@@ -33,14 +33,6 @@ const UserSchema = new mongoose.Schema({
 		minlength: 6,
 		maxlength: 32,
 		required: [true, 'Please provide phone number'],
-	},
-	numberOfVisits: {
-		type: Number,
-		default: 0,
-	},
-	numberOfLogins: {
-		type: Number,
-		default: 0,
 	},
 	sector: {
 		type: String,
@@ -52,6 +44,14 @@ const UserSchema = new mongoose.Schema({
 	suspended: {
 		type: Boolean,
 		default: false,
+	},
+	numberOfVisits: {
+		type: Number,
+		default: 0,
+	},
+	numberOfLogins: {
+		type: Number,
+		default: 0,
 	},
 	regDate: {
 		type: Date,
