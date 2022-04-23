@@ -1,4 +1,4 @@
-const config = require('./config');
+//const config = require('./config');
 require('express-async-errors');
 
 // express
@@ -41,9 +41,9 @@ app.use(errorHandlerMiddleware);
 
 const start = async () => {
 	try {
-		await connectDB(config.DB);
-		app.listen(config.PORT, config.HOST, () => {
-			console.log(`EXPRESS IS RUNNING ON: http://${config.HOST}:${config.PORT}`);
+		//await connectDB(config.DB);
+		app.listen(process.env.PORT, process.env.HOST, () => {
+			console.log(`Up!`);
 		});
 	} catch (error) {
 		console.error('Failed to start a server with message: ', error);
