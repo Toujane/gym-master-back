@@ -6,9 +6,8 @@ const express = require('express');
 const app = express();
 
 // packages
-const morgan = require('morgan');
+const logger = require('morgan');
 const cookieParser = require('cookie-parser');
-const rateLimiter = require('express-rate-limit');
 const helmet = require('helmet');
 const xss = require('xss-clean');
 const cors = require('cors');
@@ -18,29 +17,23 @@ const mongoSanitize = require('express-mongo-sanitize');
 const connectDB = require('./db/connect');
 
 // routers
-const authRouter = require('./routes/authRoutes');
+const router = require('./routes');
+const errorHandlerMiddleware = require('./middleware/errorHandler');
 
 // middleware
-
-app.set('trust proxy', 1);
-app.use(
-	rateLimiter({
-		windowMs: 15 * 60 * 1000,
-		max: 60,
-	})
-);
-
+app.use(logger('combined'));
 app.use(helmet());
 app.use(cors());
 app.use(xss());
 app.use(mongoSanitize());
 
 app.use(express.json());
-//app.use(cookieParser(process.env.JWT_SECRET))
+app.use(cookieParser(config.JWT_SECRET_KEY));
 
-app.use('/api/v1/auth', authRouter);
+//routes
+app.use('/api/v1/auth', router.authRouter);
 
-app.get('/', (req, res) => {});
+app.use(errorHandlerMiddleware);
 
 const start = async () => {
 	try {
