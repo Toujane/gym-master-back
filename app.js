@@ -32,7 +32,11 @@ app.use(cookieParser(config.JWT_SECRET_KEY));
 
 //routes
 app.use('/api/v1/auth', router.authRouter);
-
+app.get('/', (req, res) => {
+	res.send(200).json({
+		msg: 'OK',
+	});
+});
 app.use(errorHandlerMiddleware);
 
 const start = async () => {
