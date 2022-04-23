@@ -42,7 +42,7 @@ app.use(errorHandlerMiddleware);
 const start = async () => {
 	try {
 		//await connectDB(config.DB);
-		app.listen(process.env.PORT, process.env.HOST, () => {
+		app.listen(process.env.PORT, () => {
 			console.log(`Up!`);
 		});
 	} catch (error) {
