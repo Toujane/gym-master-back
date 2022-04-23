@@ -1,0 +1,45 @@
+[
+  {
+    "firstName": "Pero",
+    "lastName": "Peric",
+    "email": "pero@lumen.test",
+    "password": "$2a$10$WqX3o5bx/dm8qvB6CruYkeBkZIP1LH85fBk7bLJn.ptcZY09pqjm.",
+    "phone": "981234567",
+    "numberOfVisits": 0,
+    "numberOfLogins": 0,
+    "sector": "A-130",
+    "active": false,
+    "suspended": false,
+    "regDate": "21-04-2022",
+    "lastVisit": "21-04-2022"
+  },
+  {
+    "firstName": "Jovanka",
+    "lastName": "Jovic",
+    "email": "jovanka@lumen.test",
+    "password": "$2a$10$WqX3o5bx/dm8qvB6CruYkeBkZIP1LH85fBk7bLJn.ptcZY09pqjm.",
+    "phone": "981234567",
+    "numberOfVisits": 0,
+    "numberOfLogins": 0,
+    "sector": "A-131",
+    "active": false,
+    "suspended": false,
+    "regDate": "15-03-2022",
+    "lastVisit": "20-04-2022"
+  },
+  {
+    "firstName": "Marija",
+    "lastName": "Maric",
+    "email": "marija@lumen.test",
+    "password": "$2a$10$WqX3o5bx/dm8qvB6CruYkeBkZIP1LH85fBk7bLJn.ptcZY09pqjm.",
+    "phone": "981234567",
+    "numberOfVisits": 0,
+    "numberOfLogins": 0,
+    "sector": "A-132",
+    "active": false,
+    "suspended": false,
+    "regDate": "13-04-2022",
+    "lastVisit": "22-04-2022"
+  }
+
+]

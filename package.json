@@ -1,0 +1,51 @@
+{
+  "name": "gym-master-back",
+  "version": "1.0.0",
+  "description": "Express server for gym master application",
+  "main": "server.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon app.js",
+    "start": "cross-env NODE_ENV=production node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Toujane/gym-master-back.git"
+  },
+  "keywords": [
+    "back",
+    "express",
+    "node",
+    "gym",
+    "master",
+    "toujane"
+  ],
+  "author": "Toujane (Blažek Ivan, Kunštek Antonio, Matijević Mislav)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Toujane/gym-master-back/issues"
+  },
+  "homepage": "https://github.com/Toujane/gym-master-back#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "express-async-errors": "^3.1.1",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^6.3.0",
+    "helmet": "^5.0.2",
+    "http-status-codes": "^2.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.1",
+    "morgan": "^1.10.0",
+    "validator": "^13.7.0",
+    "xss-clean": "^0.1.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.15"
+  }
+}
