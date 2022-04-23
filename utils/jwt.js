@@ -1,13 +1,14 @@
 const jwt = require('jsonwebtoken');
+const config = require('../config');
 
 const createJWT = ({ payload }) => {
-	const token = jwt.sign(payload, process.env.JWT_SECRET, {
-		expiresIn: process.env.JWT_LIFETIME,
+	const token = jwt.sign(payload, config.JWT_SECRET_KEY, {
+		expiresIn: config.JWT_LIFETIME,
 	});
 	return token;
 };
 
-const isTokenValid = ({ token }) => jwt.verify(token, process.env.JWT_SECRET);
+const isTokenValid = ({ token }) => jwt.verify(token, config.JWT_SECRET_KEY);
 
 const attachCookiesToResponse = ({ res, user }) => {
 	const token = createJWT({ payload: user });
